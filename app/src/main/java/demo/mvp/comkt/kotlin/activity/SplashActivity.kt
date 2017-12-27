@@ -59,7 +59,7 @@ class SplashActivity : BaseActivity(){
             }
 
             override fun onAnimationEnd(animation: Animation?) {
-                startIntent<MainActivity>()
+                startIntent<MainActivity>();
                 finish()
             }
         })

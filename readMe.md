@@ -26,7 +26,9 @@ Kotlin扩展函数允许我们在不改变已有类的情况下，为类添加�
  fun Context.toast(message: String, length: Int = Toast.LENGTH_SHORT) {
     Toast.makeText(this, message, length).show()
   }
-  
+ 第二个参数是指烤面包的持续时间。这是一个可选参数，如果没有指定，将使用Toast.LENGTH_SHORT。现在你有两种方法来调用这个函数：
+ toast("Short Toast!!")
+ toast("Long Toast!!", Toast.LENGTH_LONG)
  
  在Java中，我们会将一些常用的功能封装成一个个工具类，工具类其实就是对于String，Collection，
  IO 等常用类的功能的扩展。我们写的工具类方法和变量都会写成静态的。因为，这些方法我们只是想调用一下，
@@ -44,6 +46,8 @@ object ToastUtils {
   }
 }
 
+因为默认函数却决于调用时声明的类型，而不是运行时计算出来的结果。
+成员函数优先于扩展函数 
 
 
 对象声明

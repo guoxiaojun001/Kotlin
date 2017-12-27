@@ -1,5 +1,7 @@
 package demo.mvp.comkt.kotlin.entity
 
+import android.os.Parcel
+import android.os.Parcelable
 import java.io.Serializable
 
 /**
@@ -121,3 +123,40 @@ data class Reply_to(
         var id: Int,// 30805634
         var author: String// 鱼线上的蚯蚓
 )
+
+
+
+//采用Parcelable 序列化
+data class UserBean(var content: String,
+                    var status: Int,
+                    var id: Int,
+                    var author: String )  : Parcelable {
+    constructor(parcel: Parcel) : this(
+            parcel.readString(),
+            parcel.readInt(),
+            parcel.readInt(),
+            parcel.readString()) {
+    }
+
+    override fun writeToParcel(parcel: Parcel, flags: Int) {
+        parcel.writeString(content)
+        parcel.writeInt(status)
+        parcel.writeInt(id)
+        parcel.writeString(author)
+    }
+
+    override fun describeContents(): Int {
+        return 0
+    }
+
+    companion object CREATOR : Parcelable.Creator<UserBean> {
+        override fun createFromParcel(parcel: Parcel): UserBean {
+            return UserBean(parcel)
+        }
+
+        override fun newArray(size: Int): Array<UserBean?> {
+            return arrayOfNulls(size)
+        }
+    }
+
+}

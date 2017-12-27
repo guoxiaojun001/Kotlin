@@ -27,12 +27,12 @@ inline fun <reified T: Activity> Activity.startIntent() {
     startActivity(intent)
 }
 
+
+
 fun <T> Observable<T>.applySchedulers(): Observable<T> {
     return subscribeOn(Schedulers.io()).
             unsubscribeOn(Schedulers.io()).
             observeOn(AndroidSchedulers.mainThread())
 }
-
-
 
 

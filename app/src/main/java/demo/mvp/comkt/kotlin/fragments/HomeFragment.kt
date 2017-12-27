@@ -16,6 +16,7 @@ import com.jude.easyrecyclerview.adapter.RecyclerArrayAdapter
 import com.jude.rollviewpager.RollPagerView
 import com.trello.rxlifecycle2.android.FragmentEvent
 import demo.mvp.comkt.kotlin.R
+import demo.mvp.comkt.kotlin.activity.SettingActivity
 import demo.mvp.comkt.kotlin.adapter.LatestAdapter
 import demo.mvp.comkt.kotlin.entity.LatestNews
 import demo.mvp.comkt.kotlin.entity.Story
@@ -57,6 +58,8 @@ class HomeFragment : BaseFragment<HomePresenter>() {
         if(arguments != null){
             mFrom = arguments.getString("from");
         }
+
+        var  objec  =  HomeFragment();
     }
 
 
@@ -103,9 +106,9 @@ class HomeFragment : BaseFragment<HomePresenter>() {
                 .compose(this.bindUntilEvent(FragmentEvent.DESTROY))
                 .subscribe(object : OtherObser<Int>() {
                     override fun onNext(it: Int) {
-//                        var intent = Intent(activity, ArticledetialActivity::class.java);
-//                        intent!!.putExtra("data", mAdapter!!.getItem(it))
-//                        startActivity(intent)
+                        var intent = Intent(activity, SettingActivity::class.java);
+                        intent!!.putExtra("data", mAdapter!!.getItem(it))
+                        startActivity(intent)
                     }
                 })
 
