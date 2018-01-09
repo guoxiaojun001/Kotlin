@@ -55,8 +55,6 @@ abstract class BasePreferenceActivity : PreferenceActivity(), LifecycleProvider<
 
 
 
-
-
     private val lifecycleSubject = BehaviorSubject.create<ActivityEvent>()
 
     @CheckResult
@@ -78,6 +76,10 @@ abstract class BasePreferenceActivity : PreferenceActivity(), LifecycleProvider<
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         lifecycleSubject.onNext(ActivityEvent.CREATE)
+        addPreferencesFromResource(getXml())
+        setContentView(getLayout())
+        initView()
+        initData()
     }
 
     @CallSuper

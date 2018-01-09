@@ -1,0 +1,209 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="130dp"
+    android:layout_margin="5dp"
+    android:background="@drawable/marketitem_shape"
+    android:padding="5dp"
+    app:cardCornerRadius="10dp">
+
+    <ImageView
+        android:id="@+id/logo"
+        android:layout_width="25dp"
+        android:layout_height="25dp"
+        android:layout_marginLeft="10dp"
+        android:padding="5dp"
+        android:scaleType="centerInside"
+        android:src="@mipmap/ic_launcher_round"
+        app:layout_constraintLeft_toLeftOf="parent"/>
+
+    <TextView
+        android:id="@+id/title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="5dp"
+        android:layout_marginTop="8dp"
+        android:gravity="center"
+        android:padding="5dp"
+        android:text="星星贷款"
+        app:layout_constraintLeft_toRightOf="@+id/logo"/>
+
+
+    <TextView
+        android:id="@+id/loan_btn"
+        android:layout_width="70dp"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="10dp"
+        android:gravity="center"
+        android:paddingBottom="5dp"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp"
+        android:paddingTop="5dp"
+        android:text="借款"
+        android:textColor="@android:color/white"
+        app:layout_constraintBaseline_toBaselineOf="@+id/title"
+        app:layout_constraintHorizontal_bias="1"
+        app:layout_constraintLeft_toRightOf="@id/title"
+        app:layout_constraintRight_toRightOf="parent"/>
+
+
+    <android.support.constraint.Guideline
+        android:id="@+id/guideline2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.17"/>
+
+    <android.support.constraint.Guideline
+        android:id="@+id/guideline3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.83"/>
+
+
+
+    <TextView
+        android:id="@+id/rate_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="利率"
+        app:layout_constraintHorizontal_weight="1"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/divide"/>
+
+    <TextView
+        android:id="@+id/quato_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="可借额度(万元)"
+        app:layout_constraintBaseline_toBaselineOf="@+id/rate_title"
+        app:layout_constraintLeft_toLeftOf="@+id/guideline2"
+        app:layout_constraintRight_toRightOf="@+id/guideline2"/>
+
+    <TextView
+        android:id="@+id/term_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="期限"
+        app:layout_constraintBaseline_toBaselineOf="@+id/rate_title"
+        app:layout_constraintLeft_toLeftOf="@+id/guideline3"
+        app:layout_constraintRight_toRightOf="@+id/guideline3"/>
+
+    <!--第二行-->
+
+    <View
+        android:id="@+id/divide"
+        android:layout_width="match_parent"
+        android:layout_height="0.8dp"
+        android:layout_marginBottom="5dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginTop="5dp"
+        android:background="@android:color/darker_gray"
+        app:layout_constraintTop_toBottomOf="@+id/title"
+        />
+
+
+    <TextView
+        android:id="@+id/rate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="13.5%"
+        android:textColor="@android:color/black"
+        android:textStyle="bold"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/rate_title"/>
+
+
+    <TextView
+        android:id="@+id/quato"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="100"
+        android:textColor="@android:color/black"
+        android:textStyle="bold"
+        app:layout_constraintBaseline_toBaselineOf="@+id/rate"
+        app:layout_constraintLeft_toLeftOf="@+id/quato_title"
+        app:layout_constraintRight_toRightOf="@+id/quato_title"/>
+
+    <TextView
+        android:id="@+id/term"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="10dp"
+        android:text="12"
+        android:textColor="@color/color_ff7920"
+        android:textStyle="bold"
+        app:layout_constraintBaseline_toBaselineOf="@+id/rate"
+        app:layout_constraintHorizontal_bias="1"
+        app:layout_constraintLeft_toLeftOf="@+id/term_title"
+        app:layout_constraintRight_toRightOf="@+id/term_title"/>
+
+
+    <View
+        android:layout_width="1dp"
+        android:layout_height="25dp"
+        android:background="@color/divide"
+        app:layout_constraintBottom_toBottomOf="@+id/quato"
+        app:layout_constraintLeft_toRightOf="@+id/quato_title"
+        app:layout_constraintRight_toLeftOf="@+id/rate_title"
+        app:layout_constraintTop_toTopOf="@+id/quato_title"/>
+
+
+    <View
+        android:layout_width="1dp"
+        android:layout_height="25dp"
+        android:background="@color/divide"
+        app:layout_constraintBottom_toBottomOf="@+id/term"
+        app:layout_constraintLeft_toRightOf="@+id/rate_title"
+        app:layout_constraintRight_toLeftOf="@+id/term_title"
+        app:layout_constraintTop_toTopOf="@+id/rate_title"/>
+
+
+    <View
+        android:id="@+id/divide2"
+        android:layout_width="match_parent"
+        android:layout_height="0.8dp"
+        android:layout_marginBottom="5dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginTop="7dp"
+        android:background="@color/divide"
+        app:layout_constraintTop_toBottomOf="@+id/rate"
+        />
+
+    <TextView
+        android:id="@+id/info"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:drawableLeft="@mipmap/info"
+        android:drawablePadding="5dp"
+        android:padding="3dp"
+        android:text="0门槛 急速贷款 轻松体验"
+        android:textColor="@color/color_ff7920"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/divide2"/>
+
+    <android.support.constraint.Guideline
+        android:id="@+id/guideline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.5"/>
+
+
+
+</android.support.constraint.ConstraintLayout>

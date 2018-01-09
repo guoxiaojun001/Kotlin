@@ -6,4 +6,8 @@ package demo.mvp.comkt.kotlin.base;
  */
 public interface IBasePresenter {
 
+    fun loadData();
+
+    fun refreshView();
+
 }

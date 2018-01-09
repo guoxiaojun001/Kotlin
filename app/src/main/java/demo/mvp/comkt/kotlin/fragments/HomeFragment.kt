@@ -59,7 +59,11 @@ class HomeFragment : BaseFragment<HomePresenter>() {
             mFrom = arguments.getString("from");
         }
 
-        var  objec  =  HomeFragment();
+
+        val a = "string".let {
+            Log.d("TTTT","it = " + it);
+            3
+        }
     }
 
 
@@ -85,6 +89,7 @@ class HomeFragment : BaseFragment<HomePresenter>() {
     }
 
     override fun initView() {
+        mPresenter = HomePresenter();
         mAdapter = LatestAdapter(context, HashMap<Int, String>());
         mRecyclerView.setLayoutManager(LinearLayoutManager(activity));
         mRecyclerView.adapter = mAdapter;

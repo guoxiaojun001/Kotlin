@@ -67,7 +67,6 @@ class SettingActivity : BasePreferenceActivity() {
             return@setOnPreferenceClickListener true
         }
 
-
         pre_fontlist!!.onPreferenceChangeListener = Preference.OnPreferenceChangeListener { preference, newValue ->
             initFontList(newValue as String)
             true
